@@ -1,5 +1,7 @@
 package com.mizeress.ImageGeneration;
 
-public interface ImageSource {
+import java.awt.Image;
 
+public interface ImageSource {
+    Image getImage();
 }
