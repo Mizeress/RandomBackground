@@ -17,11 +17,22 @@ package com.mizeress;
 // Scheduler class: Handles scheduling the background image changes at the specified intervals
 // Utils class: Contains utility methods that are used throughout the app
 
+import java.awt.Image;
+
+import com.mizeress.ImageGeneration.DirectoryImageSource;
+import com.mizeress.ImageGeneration.ImageSource;
+import com.mizeress.backgroundchange.BackgroundChanger;
+import com.mizeress.backgroundchange.WindowsBackgroundChanger;
+
 
 public class Main
 {
     public static void main( String[] args )
     {
-
+        ImageSource dirSource = new DirectoryImageSource();
+        Image img = dirSource.getImage();
+        BackgroundChanger bkgChange = new WindowsBackgroundChanger();
+        bkgChange.changeBackground(img);
     }
+
 }
