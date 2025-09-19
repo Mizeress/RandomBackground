@@ -6,6 +6,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+/**
+ * Handles reading and writing the configuration file
+ * Configuration options include:
+ * - imageSource: "directory" or "API"
+ * - imagePath: path to local directory or API endpoint
+ * - changeInterval: time interval in minutes for changing the background
+ */
 public class Config {
     Properties properties;
 

@@ -22,9 +22,6 @@ public class Main
 {
     public static void main( String[] args )
     {
-        //Dynamically select implementation based on config file
-        //Return an image to caller
-
 
     }
 }
