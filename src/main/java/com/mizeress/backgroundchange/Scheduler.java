@@ -6,16 +6,26 @@ import java.util.concurrent.ScheduledExecutorService;
 
 import com.mizeress.imagegeneration.ImageSource;
 
-// Schedules background changes at specified intervals
+/**
+ * Schedules periodic background changes using a ScheduledExecutorService.
+ * The interval is configurable via the config.properties file.
+ */
 public class Scheduler {
     
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
+    /**
+     * Constructor to initialize the scheduler with a fixed interval.
+     * @param intervalMinutes
+     */
     public Scheduler(int intervalMinutes) {
         scheduler.scheduleAtFixedRate(new ChangeBackgroundTask(), 0, intervalMinutes, java.util.concurrent.TimeUnit.MINUTES);
         
     }
 
+    /**
+     * Stop the scheduler and shutdown the executor service.
+     */
     public void stop() {
         System.out.println("Stopping scheduler...");
         scheduler.shutdown();
@@ -23,6 +33,10 @@ public class Scheduler {
 
 }
 
+/**
+ * Task to change the background image.
+ * This task is run periodically by the scheduler.
+ */
 class ChangeBackgroundTask implements Runnable {
     @Override
     public void run() {
@@ -36,7 +50,4 @@ class ChangeBackgroundTask implements Runnable {
             System.out.println("Error in ChangeBackgroundTask: " + e.getMessage());
         }
     }
-
-
-
 }

@@ -6,9 +6,14 @@ import java.io.FileOutputStream;
 import com.sun.jna.Native;
 import com.sun.jna.win32.W32APIOptions;
 
+/**
+ * Windows implementation of BackgroundChanger using JNA to call SystemParametersInfo.
+ */
 public class WindowsBackgroundChanger implements BackgroundChanger {
     
-    // Implementation to change the desktop background on Windows
+    /**
+     * JNA interface to call the necessary Windows API function
+     */
         public interface User32 extends com.sun.jna.Library {
             User32 INSTANCE = Native.load("user32", User32.class, W32APIOptions.DEFAULT_OPTIONS);
 
@@ -20,7 +25,10 @@ public class WindowsBackgroundChanger implements BackgroundChanger {
             );
         }
     
-    // Windows-specific implementation to change the desktop background
+    /**
+     * Change the desktop background to the specified image.
+     * @param image The image to set as the desktop background
+     */
     @Override
     public void changeBackground(java.awt.Image image) {
         

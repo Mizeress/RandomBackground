@@ -4,10 +4,20 @@ import java.awt.Image;
 
 import com.mizeress.config.Config;
 
-// Interface for different image sources (e.g., local directory, online API)
+/**
+ * Interface for image sources Directory or API
+ */
 public interface ImageSource {
+    /**
+     * Get an image from the source.
+     * @return Java AWT Image
+     */
     Image getImage();
 
+    /**
+     * Factory method to create an ImageSource instance based on configuration.
+     * @return ImageSource instance
+     */
     static ImageSource create() {
         Config config = new Config();
         String sourceType = config.getProperty("imageSource");

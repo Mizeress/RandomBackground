@@ -10,9 +10,14 @@ import javax.imageio.ImageIO;
 
 import com.mizeress.config.Config;
 
-// Class to get a random image from an online API
+/**
+ * Class to get an image from an online API
+ */
 public class APIImageSource implements ImageSource {
-    // Implementation to get an image from an online API
+    /**
+     * Get an image from the source.
+     * @return Java AWT Image
+     */
     @Override
     public Image getImage() {
         Config config = new Config();

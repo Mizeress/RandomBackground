@@ -13,7 +13,14 @@ import javax.imageio.ImageIO;
 
 import com.mizeress.config.Config;
 
+/**
+ * Class to get a random image from a local directory
+ */
 public class DirectoryImageSource implements ImageSource {
+    /**
+     * Get an image from the source.
+     * @return Java AWT Image
+     */
     @Override
     public Image getImage() {
         // Implementation to get an image from a local directory

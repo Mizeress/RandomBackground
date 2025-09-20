@@ -32,10 +32,20 @@ public class Config {
         }
     }
 
+    /**
+     * Get a property value by key
+     * @param key The setting to be retrieved
+     * @return Property value or null if not found
+     */
     public String getProperty(String key) {
         return properties.getProperty(key);
     }
 
+    /**
+     * Set a property value by key
+     * @param key The setting to be edited
+     * @param value Value to set configuration setting to
+     */
     public void setProperty(String key, String value) {
         properties.setProperty(key, value);
         // Optionally, save properties back to file
