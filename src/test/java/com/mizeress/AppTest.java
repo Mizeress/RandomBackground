@@ -3,6 +3,8 @@ package com.mizeress;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
+import com.mizeress.backgroundchange.BackgroundChanger;
+import com.mizeress.backgroundchange.WindowsBackgroundChanger;
 import com.mizeress.config.Config;
 import com.mizeress.imagegeneration.APIImageSource;
 import com.mizeress.imagegeneration.DirectoryImageSource;
@@ -59,9 +61,20 @@ public class AppTest
     @Test
     public void changeBackgroundWindows()
     {
-        com.mizeress.backgroundchange.BackgroundChanger bkgChanger = com.mizeress.backgroundchange.BackgroundChanger.create();
+        BackgroundChanger bkgChanger = new WindowsBackgroundChanger();
         java.awt.Image image = new java.awt.image.BufferedImage(1920, 1080, java.awt.image.BufferedImage.TYPE_INT_RGB);
         bkgChanger.changeBackground(image);
         assertTrue( true ); // If no exception, test passed
+    }
+
+    /**
+     * Test resolving BackgroundChanger based on OS
+     * Currently only windows is supported
+     */
+    @Test
+    public void resolveBackgroundChanger()
+    {
+        BackgroundChanger bkgChanger = BackgroundChanger.create();
+        assertTrue( bkgChanger instanceof WindowsBackgroundChanger );
     }
 }
