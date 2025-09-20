@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-import com.mizeress.ImageGeneration.ImageSource;
+import com.mizeress.imagegeneration.ImageSource;
 
 // Schedules background changes at specified intervals
 public class Scheduler {

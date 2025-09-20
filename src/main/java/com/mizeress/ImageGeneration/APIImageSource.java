@@ -1,4 +1,4 @@
-package com.mizeress.ImageGeneration;
+package com.mizeress.imagegeneration;
 
 import java.awt.Image;
 // Class to get a random image from an online API
