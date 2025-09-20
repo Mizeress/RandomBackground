@@ -32,7 +32,7 @@ Example Directory Settings:
 ```
 # Changes your wallpaper every hour to a random image contained in your directory. 
 changeInterval=60
-imagePath=C://Users/path/to/your/directory
+imagePath=C:/Users/path/to/your/directory
 imageSource=directory
 ```
 
