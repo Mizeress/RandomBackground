@@ -19,6 +19,23 @@ Config File:
   - Example APIs: https://picsum.photos/1920/1080 or https://random.danielpetrica.com/api/random
 - imageSource: How you would like to source your random image (directory, API)
 
+### `config.properties`
+Example API Settings: 
+```
+# Changes your wallpaper every 15 minutes to a random 1920 x 1080 image
+changeInterval=15
+imagePath=https://picsum.photos/1920/1080
+imageSource=API
+```
+
+Example Directory Settings:
+```
+# Changes your wallpaper every hour to a random image contained in your directory. 
+changeInterval=60
+imagePath=C://Users/path/to/your/directory
+imageSource=directory
+```
+
 🚧Coming Soon:
 - Cross Platform functionality (assuming I have access to good VMs)
 - GUI to control app/config file
