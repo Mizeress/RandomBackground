@@ -1,10 +1,10 @@
 com\mizeress\backgroundchange\WindowsBackgroundChanger$User32.class
-com\mizeress\GUI\GUI.class
-com\mizeress\ImageGeneration\DirectoryImageSource.class
+com\mizeress\imagegeneration\ImageSource.class
+com\mizeress\imagegeneration\DirectoryImageSource.class
+com\mizeress\gui\GUI.class
 com\mizeress\backgroundchange\BackgroundChanger.class
 com\mizeress\config\Config.class
-com\mizeress\ImageGeneration\ImageSource.class
 com\mizeress\backgroundchange\Scheduler.class
 com\mizeress\backgroundchange\WindowsBackgroundChanger.class
-com\mizeress\ImageGeneration\APIImageSource.class
+com\mizeress\imagegeneration\APIImageSource.class
 com\mizeress\Main.class

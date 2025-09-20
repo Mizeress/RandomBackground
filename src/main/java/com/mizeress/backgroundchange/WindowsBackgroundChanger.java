@@ -56,7 +56,7 @@ public class WindowsBackgroundChanger implements BackgroundChanger {
             if (success) {
             System.out.println("Wallpaper changed successfully.");
             } else {
-                System.out.println("Failed to change wallpaper.");
+                throw new RuntimeException("Failed to change wallpaper.");
             }
 
         } catch (Exception e) {
