@@ -17,22 +17,29 @@ package com.mizeress;
 // Scheduler class: Handles scheduling the background image changes at the specified intervals
 // Utils class: Contains utility methods that are used throughout the app
 
-import java.awt.Image;
+import java.util.concurrent.TimeUnit;
 
-import com.mizeress.ImageGeneration.DirectoryImageSource;
-import com.mizeress.ImageGeneration.ImageSource;
-import com.mizeress.backgroundchange.BackgroundChanger;
-import com.mizeress.backgroundchange.WindowsBackgroundChanger;
-
+import com.mizeress.backgroundchange.Scheduler;
+import com.mizeress.config.Config;
 
 public class Main
 {
     public static void main( String[] args )
     {
-        ImageSource dirSource = new DirectoryImageSource();
-        Image img = dirSource.getImage();
-        BackgroundChanger bkgChange = new WindowsBackgroundChanger();
-        bkgChange.changeBackground(img);
+        Config config = new Config();
+        int intervalMinutes = Integer.parseInt(config.getProperty("changeInterval"));
+
+        @SuppressWarnings("unused")
+        Scheduler scheduler = new Scheduler(intervalMinutes); //Scheduler Background changes at specified intervals
+
+        try {
+            Thread.sleep(TimeUnit.HOURS.toMillis(1));
+        } catch (InterruptedException e) {
+            System.out.println("Main thread interrupted: " + e.getMessage());
+        } // Keep the main thread alive for 1 hour (or indefinitely in a real app)
+
+        scheduler.stop(); // Stop the scheduler when the app is closing
+        System.out.println("Application exiting...");
     }
 
 }
