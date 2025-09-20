@@ -8,11 +8,35 @@ The configuration file allows you to specify whether the random image comes from
 ✅Current Features:
 - Random image from a directory
 - Change wallpaper every x minutes
-- Settings are determined by a config file
+- A config file determines settings
 - The config file can be manipulated through the Config class
 
+## User-Guide
+Currently, everything is controlled through the configuration file.
+Config File:
+- changeInterval: Time in minutes between each time of changing the background image.
+- imagePath: When in directory mode, this is the path to the directory containing the background images you'd like to choose from (e.g. C://User/[user]/Pictures). When in API mode, this is the URL to the API you would like to call. Note that the API must return an image file.
+  - Example APIs: https://picsum.photos/1920/1080 or https://random.danielpetrica.com/api/random
+- imageSource: How you would like to source your random image (directory, API)
+
+### `config.properties`
+Example API Settings: 
+```
+# Changes your wallpaper every 15 minutes to a random 1920 x 1080 image
+changeInterval=15
+imagePath=https://picsum.photos/1920/1080
+imageSource=API
+```
+
+Example Directory Settings:
+```
+# Changes your wallpaper every hour to a random image contained in your directory. 
+changeInterval=60
+imagePath=C://Users/path/to/your/directory
+imageSource=directory
+```
+
 🚧Coming Soon:
-- Random image from API
 - Cross Platform functionality (assuming I have access to good VMs)
 - GUI to control app/config file
 
