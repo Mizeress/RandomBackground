@@ -12,7 +12,7 @@ import com.mizeress.imagegeneration.ImageSource;
  */
 public class Scheduler {
     
-    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
     /**
      * Constructor to initialize the scheduler with a fixed interval.
@@ -20,7 +20,6 @@ public class Scheduler {
      */
     public Scheduler(int intervalMinutes) {
         scheduler.scheduleAtFixedRate(new ChangeBackgroundTask(), 0, intervalMinutes, java.util.concurrent.TimeUnit.MINUTES);
-        
     }
 
     /**
@@ -32,6 +31,7 @@ public class Scheduler {
     }
 
 }
+
 
 /**
  * Task to change the background image.

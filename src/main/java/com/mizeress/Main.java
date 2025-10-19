@@ -2,8 +2,6 @@ package com.mizeress;
 
 import java.util.concurrent.TimeUnit;
 
-import com.mizeress.backgroundchange.Scheduler;
-import com.mizeress.config.Config;
 import com.mizeress.gui.GUI;
 
 /**
@@ -15,12 +13,6 @@ public class Main
 {
     public static void main( String[] args )
     {
-        Config config = new Config();
-        int intervalMinutes = Integer.parseInt(config.getProperty("changeInterval"));
-
-        @SuppressWarnings("unused")
-        Scheduler scheduler = new Scheduler(intervalMinutes); //Scheduler Background changes at specified intervals
-
         //Initialize system tray if available, otherwise spool up IPC
         GUI gui = new GUI();
 
@@ -30,7 +22,6 @@ public class Main
             System.out.println("Main thread interrupted: " + e.getMessage());
         } // Keep the main thread alive for 1 hour (or indefinitely in a real app)
 
-        scheduler.stop(); // Stop the scheduler when the app is closing
         System.out.println("Application exiting...");
 
     }

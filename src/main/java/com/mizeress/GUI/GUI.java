@@ -53,6 +53,11 @@ public class GUI {
         MenuItem showGUI = new MenuItem("Edit Config");
         showGUI.addActionListener( e -> openConfigWindow());
         popup.add(showGUI);
+        MenuItem exit = new MenuItem("Exit");
+        exit.addActionListener(e -> {
+            System.exit(0);
+        });
+        popup.add(exit);
 
         TrayIcon trayIcon = new TrayIcon(image, "Random Background Changer", popup);
 
