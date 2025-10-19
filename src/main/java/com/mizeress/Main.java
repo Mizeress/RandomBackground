@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.mizeress.backgroundchange.Scheduler;
 import com.mizeress.config.Config;
+import com.mizeress.gui.GUI;
 
 /**
  * Change the desktop background to a random image at a specified interval.
@@ -20,6 +21,9 @@ public class Main
         @SuppressWarnings("unused")
         Scheduler scheduler = new Scheduler(intervalMinutes); //Scheduler Background changes at specified intervals
 
+        //Initialize system tray if available, otherwise spool up IPC
+        GUI gui = new GUI();
+
         try {
             Thread.sleep(TimeUnit.HOURS.toMillis(1));
         } catch (InterruptedException e) {
@@ -28,6 +32,7 @@ public class Main
 
         scheduler.stop(); // Stop the scheduler when the app is closing
         System.out.println("Application exiting...");
+
     }
 
 }

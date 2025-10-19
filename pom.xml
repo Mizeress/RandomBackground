@@ -25,20 +25,35 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
       <version>5.14.0</version>
     </dependency>
+
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna-platform</artifactId>
       <version>5.14.0</version>
     </dependency>
+
     <dependency>
       <groupId>org.sejda.imageio</groupId>
       <artifactId>webp-imageio</artifactId>
       <version>0.1.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>24.0.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>24.0.2</version>
     </dependency>
 
   </dependencies>
