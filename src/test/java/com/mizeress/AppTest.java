@@ -15,6 +15,8 @@ import com.mizeress.imagegeneration.ImageSource;
  */
 public class AppTest 
 {
+    // TODO Fix these tests to use mocking to be more independent and unitary
+
     @Test
     public void configReadWrite()
     {
