@@ -99,11 +99,11 @@ public class JavaFXGUI extends Application {
 
             CompletableFuture.allOf(pathCompletableFuture, sourceCompletableFuture, intervalCompletableFuture).thenRun(() -> {
                 Platform.runLater(()->{
-                    btnStop.fire();
-                    btnRun.fire();
                     btnSave.setDisable(false);
                     btnRun.setDisable(false);
                     btnStop.setDisable(false);
+                    btnStop.fire();
+                    btnRun.fire();
                 });
             }).exceptionally(ex->{
                 Platform.runLater(()->{

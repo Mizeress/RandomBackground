@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mizeress.ConfigConcurrencyTest" time="0.485" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mizeress.ConfigConcurrencyTest" time="0.492" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Java\openJdk-24\bin"/>
-    <property name="sun.java.command" value="C:\Users\Mizeress\AppData\Local\Temp\surefire5587086122102312174\surefirebooter1554609298838438101.jar C:\Users\Mizeress\AppData\Local\Temp\surefire5587086122102312174 2025-11-03T17-24-44_874-jvmRun1 surefire8385837112243246516tmp surefire_07121085608625138409tmp"/>
+    <property name="sun.java.command" value="C:\Users\Mizeress\AppData\Local\Temp\surefire11656684502429456989\surefirebooter17955650515373019415.jar C:\Users\Mizeress\AppData\Local\Temp\surefire11656684502429456989 2025-11-03T18-31-26_934-jvmRun1 surefire16075499525621685403tmp surefire_03450809926265242294tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Mizeress\OneDrive\Documents\Programming\randomimage\target\test-classes;C:\Users\Mizeress\OneDrive\Documents\Programming\randomimage\target\classes;C:\Users\Mizeress\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Mizeress\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Mizeress\.m2\repository\net\java\dev\jna\jna\5.14.0\jna-5.14.0.jar;C:\Users\Mizeress\.m2\repository\net\java\dev\jna\jna-platform\5.14.0\jna-platform-5.14.0.jar;C:\Users\Mizeress\.m2\repository\org\sejda\imageio\webp-imageio\0.1.6\webp-imageio-0.1.6.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-controls\24.0.2\javafx-controls-24.0.2.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-controls\24.0.2\javafx-controls-24.0.2-win.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-graphics\24.0.2\javafx-graphics-24.0.2.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-graphics\24.0.2\javafx-graphics-24.0.2-win.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-base\24.0.2\javafx-base-24.0.2.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-base\24.0.2\javafx-base-24.0.2-win.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-fxml\24.0.2\javafx-fxml-24.0.2.jar;C:\Users\Mizeress\.m2\repository\org\openjfx\javafx-fxml\24.0.2\javafx-fxml-24.0.2-win.jar;C:\Users\Mizeress\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Mizeress\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Mizeress\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Mizeress\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Mizeress\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Mizeress\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Mizeress\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Mizeress\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Mizeress\AppData\Local\Temp\surefire5587086122102312174\surefirebooter1554609298838438101.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Mizeress\AppData\Local\Temp\surefire11656684502429456989\surefirebooter17955650515373019415.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="24.0.1+9-30"/>
@@ -58,6 +58,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="concurrentReadsAndAsyncWrites_doNotCorruptFile{Path}" classname="com.mizeress.ConfigConcurrencyTest" time="0.456"/>
-  <testcase name="multipleAsyncSaves_thenJoin_resultsInValidFile{Path}" classname="com.mizeress.ConfigConcurrencyTest" time="0.011"/>
+  <testcase name="concurrentReadsAndAsyncWrites_doNotCorruptFile{Path}" classname="com.mizeress.ConfigConcurrencyTest" time="0.461"/>
+  <testcase name="multipleAsyncSaves_thenJoin_resultsInValidFile{Path}" classname="com.mizeress.ConfigConcurrencyTest" time="0.013"/>
 </testsuite>
