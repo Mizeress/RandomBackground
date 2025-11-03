@@ -6,6 +6,7 @@ import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
+import java.net.URL;
 
 // Graphical User Interface for controlling the Configuration File
 public class GUI {
@@ -18,7 +19,7 @@ public class GUI {
     // May need to make the Config.java class thread safe to prevent write conflicts between GUI and background changer
 
     // Choice: Use System Tray when available and fallback to IPC using local server socket for GNOME and other unsupported environments
-
+    private final String iconPath = "/icon.jpg";
 
     public GUI() {
         if(SystemTray.isSupported()) {
@@ -46,7 +47,8 @@ public class GUI {
     }
 
     private void SystemTraySetup() {
-        Image image = Toolkit.getDefaultToolkit().getImage("src/main/resources/icon.jpg");
+        URL imageURL = getClass().getResource(iconPath);
+        Image image = Toolkit.getDefaultToolkit().createImage(imageURL);
         
         //Show GUI
         PopupMenu popup = new PopupMenu();

@@ -79,20 +79,40 @@ public class JavaFXGUI extends Application {
         grid.add(new Label("Image Source"), 0, 0);
         grid.add(imageSourceCombo, 1, 0);
         grid.add(new Label("Image Path or URL"), 0, 1);
-        grid.add(imagePathField, 1, 1);
+        grid.add(imagePathField, 1, 1); //TODO Replace with a brose to file when image source is directory
         grid.add(new Label("Change Interval (minutes)"), 0, 2);
         grid.add(changeIntervalField, 1, 2);
         grid.add(actions, 1, 3);
 
         // Button Handlers
         btnSave.setOnAction(event -> {
+            //Disable button
+            btnSave.setDisable(true);
+            btnRun.setDisable(true);
+            btnStop.setDisable(true);
+
             System.out.println("Saving...");
             // Save config properties to file
-            config.setProperty("imagePath", imagePathField.getText());
-            config.setProperty("imageSource", imageSourceCombo.getValue());
-            config.setProperty("changeInterval", changeIntervalField.getText());
-            btnStop.fire();
-            btnRun.fire();
+            CompletableFuture<?> pathCompletableFuture = config.setPropertyAsync("imagePath", imagePathField.getText().trim());
+            CompletableFuture<?> sourceCompletableFuture = config.setPropertyAsync("imageSource", imageSourceCombo.getValue());
+            CompletableFuture<?> intervalCompletableFuture = config.setPropertyAsync("changeInterval", changeIntervalField.getText().trim());
+
+            CompletableFuture.allOf(pathCompletableFuture, sourceCompletableFuture, intervalCompletableFuture).thenRun(() -> {
+                Platform.runLater(()->{
+                    btnStop.fire();
+                    btnRun.fire();
+                    btnSave.setDisable(false);
+                    btnRun.setDisable(false);
+                    btnStop.setDisable(false);
+                });
+            }).exceptionally(ex->{
+                Platform.runLater(()->{
+                    btnSave.setDisable(false);
+                    btnRun.setDisable(false);
+                    btnStop.setDisable(false);
+                });
+                return null;
+            });
         });
 
         btnCancel.setOnAction(event -> {
