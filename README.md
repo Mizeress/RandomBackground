@@ -37,9 +37,9 @@ imageSource=directory
 ```
 
 🚧Coming Soon:
-- Cross Platform functionality (assuming I have access to good VMs)
+- Cross-Platform functionality
 - Alternate GUI solution for systems that don't support system trays
-- Smarter UI with input validation and directory browsing 
+- Smarter UI with input validation and directory browsing and recent cache for easy switch back and forth
 
 ## 🛠️Technologies Used
 - **Java** - Core logic
